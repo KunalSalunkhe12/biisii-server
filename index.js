@@ -30,10 +30,10 @@ app.post("/contact", async (req, res) => {
       fullName,
     });
 
-    return res.send({ response, success: true });
+    return res.status(200).json({ response, success: true });
   } catch (error) {
     console.log(error);
-    return res.send({ error, success: false });
+    return res.status(500).json({ error, success: false });
   }
 });
 
