@@ -220,17 +220,6 @@ const companies = [
     acquired: false,
   },
   {
-    name: "BVG India Limited",
-    id: 2072,
-    logo: "https://s3.ap-south-1.amazonaws.com/uabucketcompanyphotos/company-BVG_India_Limited.png",
-    slug: "BVG_India_Limited",
-    isin: "",
-    totalRecordsGlobalViewPArameter: null,
-    addedWatchList: false,
-    approachingIPO: false,
-    acquired: false,
-  },
-  {
     name: "First Cry(Brainbees Solutions Private Limited)",
     id: 2149,
     logo: "https://s3.ap-south-1.amazonaws.com/uabucketcompanyphotos/company-First_Cry_(Brainbees_Solutions_Private_Limited).png",

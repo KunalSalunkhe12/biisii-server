@@ -61,6 +61,21 @@ app.get("/companies", (req, res) => {
     results.hasMore = endIndex < companies.length;
 
     results.companies = companies.slice(startIndex, endIndex);
+
+    return res.status(200).json({ results, success: true });
+  } catch (error) {
+    return res.status(500).json({ error, success: false });
+  }
+});
+
+app.get("/search/companies", (req, res) => {
+  const { search } = req.query;
+
+  try {
+    const results = companies.filter((company) => {
+      return company.name.toLowerCase().includes(search.toLowerCase());
+    });
+
     return res.status(200).json({ results, success: true });
   } catch (error) {
     return res.status(500).json({ error, success: false });
