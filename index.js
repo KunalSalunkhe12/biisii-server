@@ -30,6 +30,8 @@ app.post("/contact", async (req, res) => {
       fullName,
     });
 
+    console.log("res", response);
+
     return res.status(200).json({ response, success: true });
   } catch (error) {
     console.log(error);
@@ -77,6 +79,24 @@ app.get("/search/companies", (req, res) => {
     });
 
     return res.status(200).json({ results, success: true });
+  } catch (error) {
+    return res.status(500).json({ error, success: false });
+  }
+});
+
+app.get("/companies/:id", (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const company = companies.find((company) => company.id === parseInt(id));
+
+    if (!company) {
+      return res
+        .status(404)
+        .json({ message: "Company not found", success: false });
+    }
+
+    return res.status(200).json({ company, success: true });
   } catch (error) {
     return res.status(500).json({ error, success: false });
   }
